@@ -1,0 +1,37 @@
+<!--DISPLAYS  ALL THE CAMPGROUNDS IN OUR DB WITH SOME INFO-->
+
+<% include ../partials/header %>
+<div class="container">
+     
+       <header class="jumbotron text-center">
+       <h1>Welcome to YelpCamp!</h1>
+       <p>View Our Hand-Picked Campgrounds from all over the world</p>
+       <a  class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+       </header>
+      
+       <div class="row">
+        <% for(var i=0;i<campgrounds.length;++i){ %>
+          
+              <div class="col-md-4 col-sm-6">
+                           <div class="thumbnail">
+                                   <img src="<%=campgrounds[i].image %>"> 
+                                    <div class="caption text-center">
+                                     <strong><%=campgrounds[i]["name"]%></strong>
+                                     </div>
+                                     <p class="text-center"> 
+                                    <a href="/campgrounds/<%= campgrounds[i]["_id"] %>"class="btn btn-info"> More Info </a>
+                                    </p>
+                               
+                          
+                                
+                           </div>
+              </div>
+          
+          
+       
+        <% } %>
+                
+       </div>
+</div>
+      <% include ../partials/footer%>
+
